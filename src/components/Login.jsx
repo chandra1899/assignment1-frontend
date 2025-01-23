@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
+import { toast, ToastContainer } from 'react-toastify'
 
 const  LoginContainer = styled.div`
     display: flex;
@@ -87,6 +88,7 @@ const Login = () => {
         let data = res.data
         addTokenToCookie(data.token)
         navigate("/")
+        toast("wow")
       } catch (error) {
         console.error("Error fetching token:", error);
       }
@@ -102,13 +104,22 @@ const Login = () => {
       }
     })
 
+    const handleKeyEnter=(e)=>{
+      if(e.key=='Enter'){
+          handleLogin()
+      }
+     }
+
   return (
-    <LoginContainer>
+    <>
+    <LoginContainer onKeyUp={handleKeyEnter} >
         <Input placeholder='Enter Email' type="text" value={email} onChange={e => setEmail(e.target.value)} />
         <Input placeholder='Enter Password' type="text" value={password} onChange={e => setPassword(e.target.value)} />
         <Button onClick={handleLogin} >Login</Button>
         <a href="/register">Don't have account?, register</a>
     </LoginContainer>
+    <ToastContainer />
+    </>
   )
 }
 
