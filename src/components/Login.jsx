@@ -88,7 +88,7 @@ const Login = () => {
         let data = res.data
         addTokenToCookie(data.token)
         navigate("/")
-        toast("wow")
+        toast("Logged In")
       } catch (error) {
         console.error("Error fetching token:", error);
       }
