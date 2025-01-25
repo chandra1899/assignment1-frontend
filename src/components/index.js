@@ -7,6 +7,7 @@ import CreateExpense from "./CreateExpense"
 import Logout from "./Logout"
 import UpdateExpense from "./UpdateExpense"
 import BackDrop from "./BackDrope"
+import ExpenseId from "./ExpenseId"
 
 export {
     Login,
@@ -16,5 +17,6 @@ export {
     CreateExpense,
     Logout,
     UpdateExpense,
-    BackDrop
+    BackDrop,
+    ExpenseId
 }

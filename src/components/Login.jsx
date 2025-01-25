@@ -36,17 +36,17 @@ const Button = styled.button`
     padding: 10px;
     margin: 10px 0;
     box-sizing: border-box;
-    border: 2px solid #007BFF; /* Blue border */
+    border: 2px solid #007BFF; 
     border-radius: 4px;
     font-size: 16px;
     font-family: Arial, sans-serif;
-    background-color: #007BFF; /* Blue background */
-    color: #ffffff; /* White text */
+    background-color: #007BFF; 
+    color: #ffffff; 
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
 
     &:hover {
-      background-color: #0056b3; /* Darker blue on hover */
+      background-color: #0056b3; 
       border-color: #0056b3;
     }
 
@@ -57,7 +57,7 @@ const Button = styled.button`
     }
 
     &:active {
-      background-color: #004085; /* Even darker blue when clicked */
+      background-color: #004085; 
       border-color: #004085;
       box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
     }
@@ -70,7 +70,7 @@ const Login = () => {
 
     const addTokenToCookie = (token) => {
       const expires = new Date();
-      expires.setTime(expires.getTime() + 7 * 24 * 60 * 60 * 1000); // Cookie valid for 7 days
+      expires.setTime(expires.getTime() + 7 * 24 * 60 * 60 * 1000); 
       document.cookie = `token=${token}; expires=${expires.toUTCString()}; path=/`;
   };
 
@@ -91,6 +91,9 @@ const Login = () => {
         toast("Logged In")
       } catch (error) {
         console.error("Error fetching token:", error);
+        if(error.response.status === 401) {
+          toast("Invalid Credentials")
+        }
       }
     }
 

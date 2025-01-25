@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { updateOn } from '../store/atoms/updateOn';
 
 const Overlay = styled.div`
-  background-color: rgba(31, 41, 55, 0.7); /* bg-gray-900 with opacity */
+  background-color: rgba(31, 41, 55, 0.7); 
   height: 110vh;
   width: 110vw;
   position: fixed;

@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import styled from 'styled-components';
 
-// Create a styled button component using styled-components
 const LogoutButton = styled.button`
   width: 40vw;
   padding: 10px 20px;

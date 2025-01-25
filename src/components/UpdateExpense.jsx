@@ -89,6 +89,7 @@ const UpdateExpense = () => {
         if(res.status === 200) {
           toast("Expense Updated")
           setUpdateOn(false)
+          window.location.reload()
         }
       } catch (error) {
         console.log("errro in creating expense", error);

@@ -5,6 +5,7 @@ import { updateExpense } from "../store/atoms/udateExpense";
 import { useSetRecoilState } from "recoil";
 import { updateOn } from "../store/atoms/updateOn";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const ExpenseContainer = styled.div`
   width: 40vw;
@@ -23,6 +24,7 @@ const Details = styled.div`
 `;
 
 const Title = styled.h3`
+  cursor: pointer;
   margin: 0 0 8px;
 `;
 
@@ -58,6 +60,7 @@ const Button = styled.button`
 const Expense = ({id, title, amount, category }) => {
   const setExp = useSetRecoilState(updateExpense)
   const setUpdateOn = useSetRecoilState(updateOn)
+  const navigate = useNavigate()
 
   const handleDelete = async (e) => {
     try {
@@ -78,10 +81,14 @@ const Expense = ({id, title, amount, category }) => {
     setExp({id, title, amount, category})
     setUpdateOn(true)
   }
+
+  const handleClick = () => {
+    navigate(`/expense/${id}`)
+  }
   return (
     <ExpenseContainer>
       <Details>
-        <Title>{title}</Title>
+        <Title onClick={handleClick} >{title}</Title>
         <Amount>Amount: ${amount}</Amount>
         <Category>Category: {category}</Category>
       </Details>
