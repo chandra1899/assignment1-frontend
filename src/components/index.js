@@ -8,6 +8,7 @@ import Logout from "./Logout"
 import UpdateExpense from "./UpdateExpense"
 import BackDrop from "./BackDrope"
 import ExpenseId from "./ExpenseId"
+import NavBarComponent from "./NavBarComponent"
 
 export {
     Login,
@@ -18,5 +19,6 @@ export {
     Logout,
     UpdateExpense,
     BackDrop,
-    ExpenseId
+    ExpenseId,
+    NavBarComponent
 }

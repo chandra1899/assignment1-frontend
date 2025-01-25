@@ -4,18 +4,18 @@ import { toast } from 'react-toastify';
 import styled from 'styled-components';
 
 const LogoutButton = styled.button`
-  width: 40vw;
-  padding: 10px 20px;
-  background-color: #c70d0d;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-  
-  &:hover {
-    background-color: #b80707;
-  }
+  background-color: #dc3545;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 25px;
+    &:hover {
+      background-color: #a71d2a;
+    }
 `;
 
 const Logout = () => {

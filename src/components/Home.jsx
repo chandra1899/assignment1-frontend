@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Expense from './Expense'
 import styled from 'styled-components'
-import { CreateExpense, Logout } from '.'
+import { CreateExpense, NavBarComponent } from '.'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { expenses } from '../store/atoms/expenses'
 
@@ -39,12 +39,12 @@ const Home = () => {
     }, [])
   return (
     <HomeDiv>
+        <NavBarComponent/>
         <CreateExpense/>
         <h2>Your Expenses</h2>
         {exps !== undefined && exps.map((exp, ind) => {
             return <Expense id={exp.id} title={exp.title} amount={exp.amount} category={exp.category} key={ind} />
         })}
-        <Logout/>
     </HomeDiv>
     
   )
