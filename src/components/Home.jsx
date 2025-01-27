@@ -26,6 +26,7 @@ const Home = () => {
                 withCredentials: true,
             })
             if(res.status === 200)
+                res.data.reverse()
                 setExps(res.data)
             
         } catch (error) {

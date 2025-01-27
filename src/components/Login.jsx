@@ -75,6 +75,10 @@ const Login = () => {
   };
 
     const handleLogin = async () => {
+      if(email == "" || password == "") {
+        alert("all feilds are required")
+        return ;
+      }
       try {
         let res = await axios.post("http://localhost:8000/login", {
           userEmail: email,

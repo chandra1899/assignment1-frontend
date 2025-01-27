@@ -69,6 +69,10 @@ const Register = () => {
     const navigate = useNavigate()
 
     const handleRegistration = async () => {
+      if(email == "" || name == "" || password == "") {
+        alert("all feilds are required")
+        return ;
+      }
       try {
         let res = await axios.post("http://localhost:8000/register", {
           name: name,
@@ -97,8 +101,14 @@ const Register = () => {
           }
         })
 
+        const handleKeyEnter=(e)=>{
+          if(e.key=='Enter'){
+            handleRegistration()
+          }
+         }
+
   return (
-    <RegisterContainer>
+    <RegisterContainer onKeyUp={handleKeyEnter} >
         <Input placeholder='Enter Name' type="text" value={name} onChange={e => setName(e.target.value)} />
         <Input placeholder='Enter Email' type="text" value={email} onChange={e => setEmail(e.target.value)} />
         <Input placeholder='Enter Password' type="text" value={password} onChange={e => setPassword(e.target.value)} />

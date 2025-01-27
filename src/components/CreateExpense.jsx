@@ -70,7 +70,7 @@ const CreateExpense = () => {
           withCredentials: true, 
         })
         if(res.status === 200) {
-          setExp((prev) => [...prev, res.data])
+          setExp((prev) => [res.data, ...prev])
           setAmount("")
           setCategory("")
           setTitle("")

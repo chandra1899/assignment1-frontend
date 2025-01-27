@@ -89,7 +89,7 @@ const Expense = ({id, title, amount, category }) => {
     <ExpenseContainer>
       <Details>
         <Title onClick={handleClick} >{title}</Title>
-        <Amount>Amount: ${amount}</Amount>
+        <Amount>Amount: ₹ {amount}</Amount>
         <Category>Category: {category}</Category>
       </Details>
       <Actions>
